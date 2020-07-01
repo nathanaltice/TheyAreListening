@@ -1,3 +1,8 @@
+// Nathan Altice
+// Updated: 7/1/20
+// They Are Listening
+// Phaser 3 input listener examples
+
 class Listeners extends Phaser.Scene {
     constructor() {
         super("listenersScene");
@@ -42,9 +47,9 @@ class Listeners extends Phaser.Scene {
         // Input Plugin (Scene)
         // click on a Game Object
         this.input.on('gameobjectdown', (pointer, gameObject, event) => {
-            // console.log(pointer);
-            // console.log(gameObject);
-            // console.log(event);
+            console.log(pointer);
+            console.log(gameObject);
+            console.log(event);
             this.printMessage(`Pointer clicked on '${gameObject.texture.key}'`);
         });
         // pointer leaves game canvas
