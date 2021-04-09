@@ -1,16 +1,16 @@
 // Nathan Altice
-// Updated: 7/1/20
+// Updated: 4/9/21
 // They Are Listening
 // Phaser 3 input listener examples
 
 class Listeners extends Phaser.Scene {
     constructor() {
-        super("listenersScene");
+        super('listenersScene');
     }
 
     preload() {
         // load assets
-        this.load.path = "assets/";
+        this.load.path = 'assets/';
         this.load.image('arrow', 'arrowKey.png');
         this.load.image('block', 'tile.png');
         this.load.image('ball', '8ball.png');
