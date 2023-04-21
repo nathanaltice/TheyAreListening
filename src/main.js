@@ -1,5 +1,5 @@
 // Nathan Altice
-// Updated: 4/19/21
+// Updated: 4/20/23
 // They Are Listening
 // Phaser 3 input listener examples
 
@@ -37,7 +37,7 @@ class Listeners extends Phaser.Scene {
         this.cameras.main.setBackgroundColor('#FFF');
 
         // set up some interactive objects
-        // see: https://newdocs.phaser.io/docs/3.54.0/Phaser.GameObjects.GameObject#setInteractive
+        // see: https://newdocs.phaser.io/docs/3.60.0/Phaser.GameObjects.GameObject#setInteractive
         this.trash = this.add.sprite(100, 600, 'trash');
         this.trash.setInteractive({
             dropZone: true
@@ -45,8 +45,7 @@ class Listeners extends Phaser.Scene {
         
         this.bird = this.add.sprite(400, 400, 'bird');
         this.bird.setInteractive({
-            draggable: false,
-            useHandCursor: false
+            dropZone: true
         });
 
         this.baseball = this.add.sprite(100, 300, 'baseball');
@@ -67,7 +66,7 @@ class Listeners extends Phaser.Scene {
         });
 
         // set up some listeners (by type)
-        // see: https://newdocs.phaser.io/docs/3.54.0/Phaser.Input.Events
+        // see: https://newdocs.phaser.io/docs/3.60.0/Phaser.Input.Events
 
         // Input Plugin (Scene)
         // click on a Game Object
@@ -75,7 +74,7 @@ class Listeners extends Phaser.Scene {
             console.log(pointer);
             console.log(gameObject);
             console.log(event);
-            this.printMessage(`Pointer clicked on '${gameObject.texture.key}'`);
+            this.printMessage(`Pointer clicked on '${gameObject.texture.key}' at ${pointer.x}, ${pointer.y}`);
         });
         // pointer leaves game canvas
         this.input.on('gameout', (time, event) => {
@@ -87,7 +86,7 @@ class Listeners extends Phaser.Scene {
         });
         // pointer wheel moves
         this.input.on('wheel', (pointer, currentlyOver, deltaX, deltaY, deltaZ) => {
-            this.printMessage(`Spinning the mouse wheel...`);
+            this.printMessage(`Mouse wheel spin!`);
         });
 
         // Game Object listeners
@@ -124,6 +123,8 @@ class Listeners extends Phaser.Scene {
     printMessage(msg) {
         this.message.text = `${msg}`;
     }
+
+    // Hey, check it out — with listener events we didn't need an update loop 💪
 }
 
 // game object configuration
