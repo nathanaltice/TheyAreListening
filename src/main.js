@@ -1,10 +1,10 @@
 // Nathan Altice
-// Updated: 12/17/23
+// Updated: 1/13/24
 // They Are Listening
 // Phaser 3 input listener examples
 
 // HALT! 🚨
-'use strict';
+'use strict'
 
 class Listeners extends Phaser.Scene {
     constructor() {
@@ -41,7 +41,7 @@ class Listeners extends Phaser.Scene {
         this.cameras.main.setBackgroundColor('#FFF')
 
         // set up some interactive objects
-        // see: https://newdocs.phaser.io/docs/3.60.0/Phaser.GameObjects.GameObject#setInteractive
+        // see: https://newdocs.phaser.io/docs/3.70.0/Phaser.GameObjects.GameObject#setInteractive
         this.trash = this.add.sprite(100, 600, 'trash')
         this.trash.setInteractive({
             dropZone: true
