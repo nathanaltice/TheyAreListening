@@ -11,6 +11,10 @@ class Listeners extends Phaser.Scene {
         super('listenersScene')
     }
 
+    init() {
+        this.messageCount = 1   // track messages printed to screen
+    }
+
     /*  Image sources (Noun Project):
         - Trash by Alice Design (cc): https://thenounproject.com/search/?q=trash&i=2025402
         - burrito by J Ray Rivera (cc): https://thenounproject.com/search/?q=burrito&i=95674
@@ -34,7 +38,6 @@ class Listeners extends Phaser.Scene {
 
     create() {
         // initialize message for text display
-        this.messageCount = 1
         this.previousMessage = `[${this.messageCount}] Awaiting input event...`
         this.message = this.add.text(width/2, 750, this.previousMessage, { color: '#000' } ).setOrigin(0.5)
 
@@ -106,6 +109,7 @@ class Listeners extends Phaser.Scene {
             this.burrito.y = dragY
             this.printMessage(`Dragging ${this.burrito.texture.key}...`)
         })
+        
         this.baseball.on('drag', (pointer, dragX, dragY) => {
             this.baseball.x = dragX
             this.baseball.y = dragY
