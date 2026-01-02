@@ -1,5 +1,5 @@
 // Nathan Altice
-// Updated: 1/13/24
+// Updated: 1/2/25
 // They Are Listening
 // Phaser 3 input listener examples
 
@@ -74,7 +74,7 @@ class Listeners extends Phaser.Scene {
 
         this.burrito = this.add.sprite(450, 150, 'burrito')
         this.burrito.setInteractive({
-            //draggable: true,
+            draggable: true,
             useHandCursor: true
         })
 
